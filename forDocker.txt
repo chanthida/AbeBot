@@ -1,0 +1,22 @@
+Check images,container
+$ sudo docker images
+$ sudo docker ps -a
+
+Delete old one
+$ sudo docker rmi discord/node-bot   
+$ sudo docker rm CONTAINER_ID 
+
+Create new image
+$ sudo docker build -t discord/node-bot .
+
+Run new again
+$ sudo docker run -p 49160:8080 -d discord/node-bot
+
+Check
+$ sudo docker ps -a
+
+Docker exec
+$ sudo docker exec -it xx bin/bash
+and
+Pull code 
+$ sudo git pull ....
