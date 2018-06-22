@@ -57,7 +57,7 @@ client.on('message', message => {
   if (message.content.indexOf("อาเบะ") >= 0 && message.content.indexOf("มาไง") >= 0) {
     message.channel.sendMessage('ใจสั่งมา  <:abe1:404268377478004746>');  
   }else if(message.content == 'อาเบะ'){
-	 message.channel.sendMessage('เรียกหาข้ามีเรื่องอันใดงั้นหรือ? <:abe4:404268370414927872>');
+	message.react('404268370414927872');	
   }else if (message.content.indexOf("อาเบะ") >= 0 && message.content.indexOf("ตูด") >= 0) {
     message.channel.sendMessage('<:abe2:404268343537696780> :point_right: :ok_hand: ');  
   }else if(message.content == 'ยาราไนก๊ะ'){
@@ -66,30 +66,22 @@ client.on('message', message => {
     message.channel.sendMessage('<:abe2:404268343537696780> :point_right: :ok_hand: ');  
   }else if (message.content.indexOf("อาเบะ") >= 0 && message.content.indexOf("บาย") >= 0) {
     message.channel.sendMessage('บาย ข้าไปละ  <:abe1:404268377478004746>');  
+  }else if (message.isMentioned(client.user)) {
+		message.react('404268343537696780');
+		message.reply('เรียกหาข้ามีเรื่องอันใด หากเรียกเล่นๆข้าจะอัดตูดเจ้า <:abe2:404268343537696780>');
   }
-  
-   if (message.isMentioned(client.user)) {
-    message.reply('เรียกหาข้ามีเรื่องอันใด หากเรียกเล่นๆข้าจะอัดตูดเจ้า <:abe2:404268343537696780>');
-	}
 	
 
 });
 
-//messageReactionAdd -- Emitted whenever a reaction is added to a message.
-//.uptime READ-ONLY -- How long it has been since the client last entered the READY state
-
-// Create an event listener for new guild members
 client.on('guildMemberAdd', member => {
 	
-	// Get a Channel by Name
-	//message.guild.channels.find("name", "webhook");
-	// returns <Channel>	
-	//message.guild.channels.find("name", "webhook").sendMessage(`ยินดีต้อนรับ, ${member} เข้าสู่เซิฟเวอร์ อย่าลืมไปแนะนำตัวใน  #introduce นะจ๊ะตะเองงง <:abe4:404268370414927872> `); 
-	// 441912762730545153 = channel ID
-   // client.channels.get('441912762730545153').sendMessage(`ยินดีต้อนรับ, ${member} เข้าสู่เซิฟเวอร์ อย่าลืมไปแนะนำตัวใน  #introduce นะจ๊ะตะเองงง <:abe4:404268370414927872> `);
-    client.channels.find("name", "bot-mention").sendMessage(`ยินดีต้อนรับ, ${member} เข้าสู่เซิฟเวอร์ อย่าลืมไปแนะนำตัวใน  #introduce นะจ๊ะตะเองงง <:abe4:404268370414927872> `);
-  // Send the message to the guilds default channel (usually #general), mentioning the member
-  // member.guild.defaultChannel.sendMessage(`ยินดีต้อนรับ, ${member} เข้าสู่เซิฟเวอร์ อย่าลืมไปแนะนำตัวใน  #introduce นะจ๊ะตะเองงง <:abe4:404268370414927872> `);
+ // Get a Channel by Name
+ //message.guild.channels.find("name", "webhook");
+	
+ // 441912762730545153 = channel ID
+ // client.channels.get('441912762730545153').sendMessage(`ยินดีต้อนรับ, ${member} เข้าสู่เซิฟเวอร์ อย่าลืมไปแนะนำตัวใน  #introduce นะจ๊ะตะเองงง <:abe4:404268370414927872>`);
+    client.channels.find("name", "bot-mention").sendMessage(`ยินดีต้อนรับ, ${member} เข้าสู่เซิฟเวอร์ อย่าลืมไปแนะนำตัวใน  #introduce นะจ๊ะตะเองงง <:abe4:404268370414927872>`); 
   
 });
 

@@ -22,7 +22,7 @@ module.exports = class GeneralCommands extends Commando.Command {
             },
             fields: [{
                 name: "Information",
-                value: `**Servers:** ${this.client.guilds.array().length}\n**Since:** ${this.client.user.createdAt.toDateString()}`,
+                value: `**Servers:** ${this.client.guilds.array().length}\n**Since:** ${this.client.user.createdAt.toDateString()}\n**PS.:** แก้ไขมาจาก WeebBot`,
                 inline: true
             }]
         }});
