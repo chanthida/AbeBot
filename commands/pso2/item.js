@@ -32,7 +32,7 @@ module.exports = class PSO2Commands extends Commando.Command {
                     if (js.length > 0){
                         let embed = { embed: {
                             color: 3447003,
-                            title: "ผลการค้นหาราคายาน4",
+                            title: "ผลการค้นหาราคายาน 4",
                             url: "http://kaze.rip",
                             fields: []
                         }}
@@ -46,10 +46,33 @@ module.exports = class PSO2Commands extends Commando.Command {
                             }
                         })
 
-                        msg.reply("", embed)
+                        msg.reply("", embed)					
+						
+                    }else{
+                        msg.reply("ยาน 4 หาไม่เจออ๊ะ ... ลองหาใหม่อีกรอบนะ   :joy: ")
+                    }
+					if (js.length > 0){
+                        let embed = { embed: {
+                            color: 3447003,
+                            title: "ผลการค้นหาราคายาน 8",
+                            url: "http://kaze.rip",
+                            fields: []
+                        }}
+
+                        js.slice(0, 4).forEach(function (item) {
+                            if (item['PriceInfo'].length > 0 && item['PriceInfo'].find(x => x['Ship'] === 8)){
+                                embed['embed']['fields'].push({name: item['EnName'], value: `**ราคา:** ${item['PriceInfo'].find(x => x['Ship'] === 8)['Price'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}            **อัพเดทล่าสุด:** ${item['PriceInfo'].find(x => x['Ship'] === 8)['LastUpdated'].toString()}\n**JP:** ${item['JpName']}`})
+                            }
+                            else{
+                                embed['embed']['fields'].push({name: item['EnName'], value: `**ราคา:**  - \n**JP:** ${item['JpName']}`})
+                            }
+                        })
+
+                        msg.reply("", embed)					
+						
                     }
                     else{
-                        msg.reply("หาไม่เจออ๊ะ ... ลองหาใหม่อีกรอบนะ   :joy: ")
+                        msg.reply("ยาน 8 หาไม่เจออ๊ะ ... ลองหาใหม่อีกรอบนะ   :joy: ")
                     }
                 }
                 catch(err){
