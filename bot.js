@@ -81,7 +81,7 @@ client.on('guildMemberAdd', member => {
 	
  // 441912762730545153 = channel ID
  // client.channels.get('441912762730545153').sendMessage(`ยินดีต้อนรับ, ${member} เข้าสู่เซิฟเวอร์ อย่าลืมไปแนะนำตัวใน  #introduce นะจ๊ะตะเองงง <:abe4:404268370414927872>`);
-    client.channels.find("name", "bot-mention").sendMessage(`ยินดีต้อนรับ, ${member} เข้าสู่เซิฟเวอร์ อย่าลืมไปแนะนำตัวใน  #introduce นะจ๊ะตะเองงง <:abe4:404268370414927872>`); 
+    client.channels.find("name", "bot-spam").sendMessage(`ยินดีต้อนรับ, ${member} เข้าสู่เซิฟเวอร์ อย่าลืมไปแนะนำตัวใน  #introduce นะจ๊ะตะเองงง <:abe4:404268370414927872>`); 
   
 });
 
