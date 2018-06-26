@@ -89,7 +89,7 @@ client.on('guildMemberAdd', member => {
 
 // EQ alerts system
 client.setInterval(function() {
-    request('http://localhost:5000/eq', function (error, response, body) {
+    request('http://ec2-54-169-184-239.ap-southeast-1.compute.amazonaws.com:49161/eq', function (error, response, body) {
         if (!error && response.statusCode == 200) {
             let response = JSON.parse(body);
             let cached = JSON.parse(fs.readFileSync("cache.json"));
