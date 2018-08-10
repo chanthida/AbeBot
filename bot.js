@@ -80,7 +80,7 @@ client.on('guildMemberAdd', (member) => {
 											+ `  นะจ๊ะ <:abe4:404268370414927872>`).toString() ;
 
 	
-	var dC = member.guild.channels.find("name", "introduce");
+	var dC = member.guild.channels.find("name", "bot-spam");
 	
 	 if (dC) {
         dC.send(message); 
