@@ -20,7 +20,7 @@ const client = new Commando.Client({
     owner: '91387943679172608',
     commandPrefix: config.prefix
 });
-let guildID ;
+
 client
     // Events
     .on('error', console.error)
@@ -70,7 +70,6 @@ client.on('message', message => {
 		message.react('404268343537696780');
 		message.reply('เรียกหาข้ามีเรื่องอันใด หากเรียกเล่นๆข้าจะอัดตูดเจ้า <:abe2:404268343537696780>');
   }
-  guildID = message.guild.id;
 
 });
 
