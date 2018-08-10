@@ -20,7 +20,7 @@ const client = new Commando.Client({
     owner: '91387943679172608',
     commandPrefix: config.prefix
 });
-
+let guildID ;
 client
     // Events
     .on('error', console.error)
@@ -70,18 +70,23 @@ client.on('message', message => {
 		message.react('404268343537696780');
 		message.reply('เรียกหาข้ามีเรื่องอันใด หากเรียกเล่นๆข้าจะอัดตูดเจ้า <:abe2:404268343537696780>');
   }
-	
+  guildID = message.guild.id;
 
 });
 
-client.on('guildMemberAdd', member => {
+client.on('guildMemberAdd', (member) => {
+
+	var message = (`ยินดีต้อนรับ, ${member} เข้าสู่เซิฟเวอร์  ` 
+											+ `  อย่าลืมไปแนะนำตัวใน <#458573356212682763>` 											
+											+ `  นะจ๊ะ <:abe4:404268370414927872>`).toString() ;
+
 	
- // Get a Channel by Name
- //message.guild.channels.find("name", "webhook");
+	var dC = member.guild.channels.find("name", "introduce");
 	
- // 441912762730545153 = channel ID
- // client.channels.get('441912762730545153').sendMessage(`ยินดีต้อนรับ, ${member} เข้าสู่เซิฟเวอร์ อย่าลืมไปแนะนำตัวใน  #introduce นะจ๊ะตะเองงง <:abe4:404268370414927872>`);
-    client.channels.find("name", "bot-spam").sendMessage(`ยินดีต้อนรับ, ${member} เข้าสู่เซิฟเวอร์ อย่าลืมไปแนะนำตัวใน  #introduce นะจ๊ะตะเองงง <:abe4:404268370414927872>`); 
+	 if (dC) {
+        dC.send(message); 
+    }	
+    
   
 });
 
